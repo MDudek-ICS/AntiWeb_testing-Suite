@@ -32,7 +32,7 @@ y finalmente una última herramienta que explotara un RCE.
 
 # Tool: "Anti-web" 
 ### Usage:
-***
+
  	usr@pwn:~$ python anti-web-v1.py --help
 	usage: anti-web.py [-h] [-v] --host HOST [--port PORT] [--file LFI]
 
@@ -46,12 +46,12 @@ y finalmente una última herramienta que explotara un RCE.
 	  --file LFI     Test LFI
 
 	[+] Demo: anti-web.py --host 192.168.1.100 --port 80
-***
+
 
 
 # Tool: "Seek And Destroy"
 ### Usage:
-***
+
 	usr@pwn:~$ python seekAndDestroy.py --help
 	usage: seekAndDestroy.py [-h] [-v] [--host HOST] [--list HOST_LIST]
 	                         [--port PORT]
@@ -67,12 +67,12 @@ y finalmente una última herramienta que explotara un RCE.
 
 	[+] Usage: seelAndDestroy.py --list host_list.txt --port 8080
 
-***
+
 
 
 # Tool "Remote Command Execution": 
 ### Usage:
-***
+
 	usr@pwn:~$ python rce.py --help
 	usage: RCE.py [-h] [-v] --host HOST [--port PORT] -ck COOKIE --cmd COMMAND
 
@@ -88,11 +88,9 @@ y finalmente una última herramienta que explotara un RCE.
 
 	[+] Demo: python rce.py --host <host> -ck <sessionCookie> --cmd "ls -la /"
 
-***
-
 ## Demo
 
-....Wait
+	....Wait
 
 
 
