@@ -1,4 +1,4 @@
-# Exploit Title: Apps industrial OT over Server: "Anti-Web 3.x.x < 3.8.x" vuln: Local File Inclusion
+# Exploit Title: Apps industrial / OT over Server: "Anti-Web 3.x.x < 3.8.x" vuln: Local File Inclusion
 
 *** 
 	[*] Date: 15/05/2017
