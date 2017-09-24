@@ -18,10 +18,10 @@ y finalmente una última herramienta que explotara un RCE.
 # Quick start
 
 	usr@pwn:~$ git clone https://github.com/ezelf/AntiWeb_testing-Suite
-	usr@pwn:~$ cd AntiWeb_testing-Suite
-	usr@pwn:~$ ls -l 
 
 ***
+	usr@pwn:~$ cd AntiWeb_testing-Suite
+	usr@pwn:~$ ls -l 
 	total 16
 	drwxr-xr-x 4 root root 4096 sep 14 21:05 LFI
 	drwxr-xr-x 4 root root 4096 sep 14 21:05 RCE
@@ -30,7 +30,8 @@ y finalmente una última herramienta que explotara un RCE.
 ***
 
 
-# Uso: "Anti-web" 
+# Tool: "Anti-web" 
+### Usage:
 ***
  	usr@pwn:~$ python anti-web-v1.py --help
 	usage: anti-web.py [-h] [-v] --host HOST [--port PORT] [--file LFI]
@@ -47,8 +48,9 @@ y finalmente una última herramienta que explotara un RCE.
 	[+] Demo: anti-web.py --host 192.168.1.100 --port 80
 ***
 
-# Uso: "Seek And Destroy"
 
+# Tool: "Seek And Destroy"
+### Usage:
 ***
 	usr@pwn:~$ python seekAndDestroy.py --help
 	usage: seekAndDestroy.py [-h] [-v] [--host HOST] [--list HOST_LIST]
@@ -68,8 +70,8 @@ y finalmente una última herramienta que explotara un RCE.
 ***
 
 
-# Uso: 
-
+# Tool "Remote Command Execution": 
+### Usage:
 ***
 	usr@pwn:~$ python rce.py --help
 	usage: RCE.py [-h] [-v] --host HOST [--port PORT] -ck COOKIE --cmd COMMAND
