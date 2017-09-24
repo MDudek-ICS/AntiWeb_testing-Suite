@@ -48,10 +48,10 @@ details = '''
    * Bertin Jose ( %s )
 ''' %(Colors.GREEN+"@capitan_alfa"+Colors.BLUE,Colors.GREEN+"@bertinjoseb"+Colors.DEFAULT)
 
-parser = argparse.ArgumentParser(prog='freepass.py',
+parser = argparse.ArgumentParser(prog='seekAndDestroy.py',
 								description=' [+] Obtain and break the credentials of your industrial control system .', 
-								epilog='[+] Demo: freepass.py --list vdr_alliance/host_list.txt --port 8080',
-								version="0.2")
+								epilog='[+] Usage: seelAndDestroy.py --list host_list.txt --port 8080',
+								version="1")
 
 parser.add_argument('--host', dest="HOST",  		help='host')
 parser.add_argument('--list', dest="HOST_LIST",  	help='hosts', default=False)
