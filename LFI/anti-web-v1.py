@@ -31,7 +31,7 @@ parser = argparse.ArgumentParser(prog='anti-web.py',
 
 parser.add_argument('--host', 	dest="HOST", 	help='host',required=True)
 parser.add_argument('--port', 	dest="PORT", 	help='set port (default = 80)',  default="80", required=False)
-parser.add_argument('--lfi', 	dest="LFI", 	help='Test LFI',  default=0, required=False)
+parser.add_argument('--file', 	dest="LFI", 	help='Test LFI',  default=0, required=False)
 
 args 	= parser.parse_args()
 
