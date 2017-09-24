@@ -17,16 +17,16 @@ y finalmente una última herramienta que explotara un RCE.
 
 # Quick start
 
-usr@pwn:~$ git clone https://github.com/ezelf/AntiWeb_testing-Suite
-usr@pwn:~$ cd AntiWeb_testing-Suite
-usr@pwn:~$ ls -l 
+	usr@pwn:~$ git clone https://github.com/ezelf/AntiWeb_testing-Suite
+	usr@pwn:~$ cd AntiWeb_testing-Suite
+	usr@pwn:~$ ls -l 
 
 ***
-total 16
-drwxr-xr-x 4 root root 4096 sep 14 21:05 LFI
-drwxr-xr-x 4 root root 4096 sep 14 21:05 RCE
--rwxrwxr-x 1 root root 1852 sep 24 08:42 README.md
-drwxr-xr-x 3 root root 4096 sep 24 08:00 seekAndDestroy
+	total 16
+	drwxr-xr-x 4 root root 4096 sep 14 21:05 LFI
+	drwxr-xr-x 4 root root 4096 sep 14 21:05 RCE
+	-rwxrwxr-x 1 root root 1852 sep 24 08:42 README.md
+	drwxr-xr-x 3 root root 4096 sep 24 08:00 seekAndDestroy
 ***
 
 
@@ -50,20 +50,20 @@ drwxr-xr-x 3 root root 4096 sep 24 08:00 seekAndDestroy
 # Uso: "Seek And Destroy"
 
 ***
-usr@pwn:~$ python seekAndDestroy.py --help
-usage: seekAndDestroy.py [-h] [-v] [--host HOST] [--list HOST_LIST]
-                         [--port PORT]
+	usr@pwn:~$ python seekAndDestroy.py --help
+	usage: seekAndDestroy.py [-h] [-v] [--host HOST] [--list HOST_LIST]
+	                         [--port PORT]
 
-[+] Obtain and break the credentials of your industrial control system .
+	[+] Obtain and break the credentials of your industrial control system .
 
-optional arguments:
-  -h, --help        show this help message and exit
-  -v, --version     show program's version number and exit
-  --host HOST       host
-  --list HOST_LIST  hosts
-  --port PORT       set port (default = 80)
+	optional arguments:
+	  -h, --help        show this help message and exit
+	  -v, --version     show program's version number and exit
+	  --host HOST       host
+	  --list HOST_LIST  hosts
+	  --port PORT       set port (default = 80)
 
-[+] Usage: seelAndDestroy.py --list host_list.txt --port 8080
+	[+] Usage: seelAndDestroy.py --list host_list.txt --port 8080
 
 ***
 
@@ -71,20 +71,20 @@ optional arguments:
 # Uso: 
 
 ***
-usr@pwn:~$ python rce.py --help
-usage: RCE.py [-h] [-v] --host HOST [--port PORT] -ck COOKIE --cmd COMMAND
+	usr@pwn:~$ python rce.py --help
+	usage: RCE.py [-h] [-v] --host HOST [--port PORT] -ck COOKIE --cmd COMMAND
 
-[+] COMMANDS over your industrial control system .
+	[+] COMMANDS over your industrial control system .
 
-optional arguments:
-  -h, --help     show this help message and exit
-  -v, --version  show program's version number and exit
-  --host HOST    Host
-  --port PORT    Port
-  -ck COOKIE     Cookie
-  --cmd COMMAND  Command
+	optional arguments:
+	  -h, --help     show this help message and exit
+	  -v, --version  show program's version number and exit
+	  --host HOST    Host
+	  --port PORT    Port
+	  -ck COOKIE     Cookie
+	  --cmd COMMAND  Command
 
-[+] Demo: python rce.py --host <host> -ck <sessionCookie> --cmd "ls -la /"
+	[+] Demo: python rce.py --host <host> -ck <sessionCookie> --cmd "ls -la /"
 
 ***
 
