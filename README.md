@@ -1,10 +1,12 @@
-# scadas AntiWeb: Testing Suite
+# ICS/OT AntiWeb: Testing Suite
 
 ## Introducción 
-Una vulnerabilidad ha sido encontrada en aplicaciones web usadas en ICS/OT que corren sobre servidores [Anti-Web](https://github.com/hoytech/antiweb/) (hasta su version 3.8.7).
+Una vulnerabilidad ha sido encontrada en aplicaciones web asociadas a ICS/OT que corren sobre servidores [Anti-Web](https://github.com/hoytech/antiweb/) (hasta su version 3.8.7).
 La vulnerabilidades que se han identificado  afectan a varios fabricantes de renombre en la industria de la automatización de procesos industriales y telecomunicaciones. Estos devices ya cuentan con dos similares y viejos CVEs (CVE-2010-4730 & CVE-2010-4733) a lo que luego de reportar consiguió un tercero CVE (2017-9097) e inmediatamente el vendor lanzó un parche. En inmediatamente siguieron otros. 
 
 Para tener una referencia aproximada del grado de exposición con la que cuentan esto dispositivos nos valemos de los host que se encuentran indexados en Shodan, siendo estos un poco mayor de 800 devices potencialmente vulnerables. 
+
+![SHODAN](screenshot/shodanSearch.png)
 
 Con respecto al LFI que nuestra tool procura de explotar, hoy los distintos vendors afectados ya cuentan con sus respectivos parche oficiales que contrarresta la vulnerabilidad. Por lo que de alguna forma el intentar explotar el fallos viene a corroborar el compromiso de los operadores y responsables de estas tecnologías, respondiendo a una pregunta fundamental: "Se habrán instalado los parches correspondientes?" 
 
@@ -129,12 +131,54 @@ Y llegamos a lo que tal vez sea la mas interesante, la posibilidad de ejecutar c
 
 
 
+***
+# Rerefencias externas:
+	* https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9097
+	* https://ics-cert.us-cert.gov/advisories/ICSA-17-222-05
+
+	* https://www.seebug.org/vuldb/ssvid-96555 (RCE)
+	* https://www.seebug.org/vuldb/ssvid-96556 (LFI)
+
+	* https://vuldb.com/es/?id.102570
+	* https://github.com/hoytech/antiweb/
+	* https://nvd.nist.gov/vuln/detail/CVE-2017-9097
+	* https://www.9165619.com/vulnerability/cve-2017-9097-89702 
+	* http://old.cnnvd.org.cn/vulnerability/show/cv_id/2017051027
+	* http://jvndb.jvn.jp/ja/contents/2017/JVNDB-2017-005240.html
+
+	* http://plugins.openvas.org/nasl.php?oid=106886 				(*down)
+	* http://webcache.googleusercontent.com/search?q=cache:Z1VaYjaZLB4J:plugins.openvas.org/nasl.php%3Foid%3D106886+&cd=1&hl=es-419&ct=clnk&gl=cl
+
+# otros CVE
+'''
+[+] CVE-2009-4462  (  Intellicom NetBiterConfig.exe )
+[+] CVE-2009-4463  (  Intellicom NetBiterConfig.exe )
+	http://blog.48bits.com/exposing-hms-hicp-protocol-0day-light/
+
+
+[+] CVE-2010-4730 ( Directory 		traversal vulnerability in cgi-bin/read.cgi in WebSCADA )
+[+] CVE-2010-4731 ( Absolute path 	traversal vulnerability in cgi-bin/read.cgi in WebSCADA )
+[+] CVE-2010-4732 ( rce, using a config.html 2.conf action to replace the logo page's GIF image file )
+
+[+] CVE-2010-4732 ( default username and password to obtain superadmin access via the web interface )
+	
+	Intellicom NetBiter products based on the NB100 and NB200 platforms, including:
+	WebSCADA (WS100)
+	WebSCADA (WS200)
+	Easy Connect (EC150)
+	Modbus RTU – TCP Gateway (MB100)
+	Serial Ethernet Server (SS100).
+	
+	* https://ics-cert.us-cert.gov/advisories/ICSA-10-316-01A
+'''
+
+***
 
 Las herramientas en cuestión están en (AntiWeb_testing-Suite):
 https://github.com/ezelf/AntiWeb_testing-Suite/
 
 
-Video que combina las tres tools:
+Video que combina las tres tools en su primera version beta:
 https://www.youtube.com/watch?v=HdkZA1DO08Y
 
  
