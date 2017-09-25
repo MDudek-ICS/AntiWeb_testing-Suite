@@ -125,7 +125,7 @@ Y llegamos a lo que tal vez sea la mas interesante, la posibilidad de ejecutar c
 
 	[+] Demo: python rce.py --host <host> -ck <sessionCookie> --cmd "ls -la /"
 
-## Demo
+## Live Action (video) ...
 
 	....Wait
 
@@ -150,10 +150,11 @@ Y llegamos a lo que tal vez sea la mas interesante, la posibilidad de ejecutar c
 	* http://webcache.googleusercontent.com/search?q=cache:Z1VaYjaZLB4J:plugins.openvas.org/nasl.php%3Foid%3D106886+&cd=1&hl=es-419&ct=clnk&gl=cl
 
 # otros CVE
+
 '''
 	[+] CVE-2009-4462  (  Intellicom NetBiterConfig.exe )
 	[+] CVE-2009-4463  (  Intellicom NetBiterConfig.exe )
-		http://blog.48bits.com/exposing-hms-hicp-protocol-0day-light/
+	 (http://blog.48bits.com/exposing-hms-hicp-protocol-0day-light/)
 
 
 	[+] CVE-2010-4730 ( Directory 		traversal vulnerability in cgi-bin/read.cgi in WebSCADA )
