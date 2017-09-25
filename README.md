@@ -151,25 +151,26 @@ Y llegamos a lo que tal vez sea la mas interesante, la posibilidad de ejecutar c
 
 # otros CVE
 '''
-[+] CVE-2009-4462  (  Intellicom NetBiterConfig.exe )
-[+] CVE-2009-4463  (  Intellicom NetBiterConfig.exe )
-	http://blog.48bits.com/exposing-hms-hicp-protocol-0day-light/
+	[+] CVE-2009-4462  (  Intellicom NetBiterConfig.exe )
+	[+] CVE-2009-4463  (  Intellicom NetBiterConfig.exe )
+		http://blog.48bits.com/exposing-hms-hicp-protocol-0day-light/
 
 
-[+] CVE-2010-4730 ( Directory 		traversal vulnerability in cgi-bin/read.cgi in WebSCADA )
-[+] CVE-2010-4731 ( Absolute path 	traversal vulnerability in cgi-bin/read.cgi in WebSCADA )
-[+] CVE-2010-4732 ( rce, using a config.html 2.conf action to replace the logo page's GIF image file )
-
-[+] CVE-2010-4732 ( default username and password to obtain superadmin access via the web interface )
+	[+] CVE-2010-4730 ( Directory 		traversal vulnerability in cgi-bin/read.cgi in WebSCADA )
+	[+] CVE-2010-4731 ( Absolute path 	traversal vulnerability in cgi-bin/read.cgi in WebSCADA )
 	
-	Intellicom NetBiter products based on the NB100 and NB200 platforms, including:
-	WebSCADA (WS100)
-	WebSCADA (WS200)
-	Easy Connect (EC150)
-	Modbus RTU – TCP Gateway (MB100)
-	Serial Ethernet Server (SS100).
-	
-	* https://ics-cert.us-cert.gov/advisories/ICSA-10-316-01A
+	[+] CVE-2010-4732 ( RCE, using a config.html 2.conf action to replace the logo page's GIF image file )
+
+	[+] CVE-2010-4733 ( default username and password to obtain superadmin access via the web interface )
+		
+		Intellicom NetBiter products based on the NB100 and NB200 platforms, including:
+		WebSCADA (WS100)
+		WebSCADA (WS200)
+		Easy Connect (EC150)
+		Modbus RTU – TCP Gateway (MB100)
+		Serial Ethernet Server (SS100).
+		
+		* https://ics-cert.us-cert.gov/advisories/ICSA-10-316-01A
 '''
 
 ***
