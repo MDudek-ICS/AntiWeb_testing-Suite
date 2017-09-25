@@ -1,4 +1,4 @@
-# AntiWeb: Testing Suite
+# scadas AntiWeb: Testing Suite
 
 ## Introducción 
 Una vulnerabilidad ha sido encontrada en aplicaciones web usadas en ICS/OT que corren sobre servidores [Anti-Web](https://github.com/hoytech/antiweb/) (hasta su version 3.8.7).
@@ -28,7 +28,12 @@ y finalmente una última herramienta que explotara un RCE.
 
 
 # Tool [1]: "Anti-web" 
-### Usage:
+### Introducción
+Simplemente corrobora la existencia del LFI, consultando unos paths predefinidos y / o dandole la posibilidad al usuario de pasar su propio path.
+
+Opcionalmente uno podra pasarle una cookie de session (valida).
+
+### Uso:
 
  	usr@pwn:~$ python anti-web-v1.py --help
 	usage: anti-web.py [-h] [-v] --host HOST [--port PORT] [--file LFI]
@@ -39,15 +44,34 @@ y finalmente una última herramienta que explotara un RCE.
 	  -h, --help     show this help message and exit
 	  -v, --version  show program's version number and exit
 	  --host HOST    host
-	  --port PORT    set port (default = 80)
+	  --port PORT    Set port (default = 80)
 	  --file LFI     Test LFI
+	  -ck COOKIE     Set Cookie
+
 
 	[+] Demo: anti-web.py --host 192.168.1.100 --port 80
+
+![CVE-2017-9097](screenshot/POC_LFI.png)
+
+
 
 
 
 # Tool [2]: "Seek And Destroy"
-### Usage:
+### Introducción.
+Esta Herramienta procura dale un buen uso al LFI. Para lo cual apunta al archivo "/home/config/users.cfg" en donde se encuentras las credencias que permiten el acceso a la aplicacion web. 
+
+![CVE-2017-9097](screenshot/POC_LFI_2.png)
+
+"Seek And Destroy", Parsea este archivo, Identifica el hash que corresponde a la concatenacion del password y su usuario pasado a la funcion de hash Md5.
+Con listas precalculadas, se iran descubriendo que se esconde detras de estos hashes. 
+
+
+![breaking_the_hash](screenshot/breaking_the_hash.png)
+
+Se podra atacar individualmente un solo host o una lista de estos
+
+### Uso:
 
 	usr@pwn:~$ python seekAndDestroy.py --help
 	usage: seekAndDestroy.py [-h] [-v] [--host HOST] [--list HOST_LIST]
@@ -68,7 +92,21 @@ y finalmente una última herramienta que explotara un RCE.
 
 
 # Tool [3]: "Remote Command Execution": 
-### Usage:
+### Introducción
+Y llegamos a lo que tal vez sea la mas interesante, la posibilidad de ejecutar comandos del sistema operativo del hardware que soporta el sistema vulnerable. 
+	 *** "Del Http a la Shell"  ***
+
+
+![RCE](screenshot/rce-ps.png)
+.
+![RCE](screenshot/rce-ifconfig.png)
+
+
+	#### continuara... (mañana es lunes. xd)
+
+
+
+### Uso:
 
 	usr@pwn:~$ python rce.py --help
 	usage: RCE.py [-h] [-v] --host HOST [--port PORT] -ck COOKIE --cmd COMMAND
