@@ -3,7 +3,6 @@
 brokenList = {
 	
 			"0de0f639e430c8162fd6badc208b1dca" : "Aedilis123Aedilis123",
-			"13f2e7476de1de9c983e971fa3169215" : "andriusadmin",
 			"1c89d8ed78881e0fe41ce01806a36c05" : "BalderBalder",
 			"1ebc678340dd5c06cc1a19adaa6d1d7e" : "issISS",
 			"2d2da0da2a500608a067cecbba312146" : "2211per",
@@ -12,7 +11,6 @@ brokenList = {
 			"30ce9243a50d7e446dfbda6f0e2b1004" : "crf2crf2",
 			"34ae8095dab4bd33ec7a6e273c07caff" : "cerberusmarcus",
 			"0de0f639e430c8162fd6badc208b1dca" : "Aedilis123Aedilis123",
-			"13f2e7476de1de9c983e971fa3169215" : "andriusadmin",
 			"1c89d8ed78881e0fe41ce01806a36c05" : "BalderBalder",
 			"1ebc678340dd5c06cc1a19adaa6d1d7e" : "issISS",
 			"2d2da0da2a500608a067cecbba312146" : "2211per",
@@ -36,24 +34,19 @@ brokenList = {
 			"a93bf10a576bf645a84d6a90a1e9536f" : "ugetamugetam",
 			"b56a0e8dabe1e9e6a7fd6913e6448220" : "andand",
 			"b775cd3050f64eee383788e8f559e8dc" : "robertalauras",
-			"bb88d9562e9f4cbb23a50ad43de85820" : "violet70admin",
 			"c2d7c90af5029c2ae25554b8a892226b" : "norrjour",
 			"c2e2352f16a6ba947fabd0cf0a5236ed" : "balderbalder",
 			"c471fcb5f4bb904c5594c0e9fc094a57" : "jourjour",
 			"c514c91e4ed341f263e458d44b3bb0a7" : "demodemo",
-	#		"cd92a26534dba48cd785cdcc0b3e6bd1" : "rootadmin",
 			"d2f0edb722854abf16e323bf3f2a7671" : "1337peter",
-			"d312c1da6817ad4321390ee37cd9e268" : "1qaz3edcadmin",
 			"d316d243dca6a7d237b5ae3e4571ef04" : "kjellkjell",
 			"d4b9b07c3490cbc7861ad15148bb51cd" : "adurune",
 			"d4bb1b15552b4a19e26cd01323667b7e" : "esnemoes",
 			"db0b959c6adf3b396f1cc9770ab0b949" : "lablab",
 			"eb45cd039f19cb1ece0ead8085e2c389" : "linasjulius",
-			"ebd98998ffd59e35a40f08ff3cf31614" : "affe*admin",
 			"f5d62b4c5a2d5ae04e10c3a5ae8360e6" : "ekstaoa",
 	#		"f6fdffe48c908deb0f4c3bd36c032e72" : "adminadmin",
 			"fa28cbc30b028aff9cfe2a0ba7ec3063" : "toestony",
-			"fa46bb4ff709535939eace8517f563b0" : "admin1066admin",
 			"fb6ba492b8fa0b264ad5fc016cb1123a" : "MAMA",
 			"fe4ceeb01d43a6c29d8f4fe93313c6c1" : "guestguest",
 			"3bbbee9e71bede508444662143067364" : "2211*per",
@@ -61,16 +54,10 @@ brokenList = {
 			"01b29d22b507b2ffd2f181aae5ccf84c" : "Peter21sten",
 			"649d5385fa5a510b087ece4d9bf8c07c" : "gurkapeter",
 			"ee4f2bf0eb91e91f3aaa1d22ad5af2ea" : "comfortmikael",
-			"4d1f2997f1e15e1c4e4a48bc870cadcb" : "Ian716084admin",
 			"89239cbb6b5cb0fe3e7073bbd28530aa" : "valohuolto",
 			"7fb15414d3c31fd64620090c1605d1fd" : "aspendrift",
 			"ed5aaa730f2564cc1dc217df61feb890" : "inflokent",
 			"023a3fd83dc421c611d0fd026a0cdc30" : "120268abb",
-			"3532689e6eca49889adc48d00c32d60c" : "kettuadmin",
-			"4d1f2997f1e15e1c4e4a48bc870cadcb" : "Ian716084admin",
-			"cbddd7fd61546efed8179a1fb51157ee" : "hi01admin",
-			"e155a29d32171999e8259235573b1dab" : "sem123admin",
-			"f4b0e1d7019af18327a058449bbc0c54" : "35263526admin",
 			"5fa1ff69c1cc4c81be5337d5840810a1" : "kukenchh",
 			"99f167f71ab66602f386f8727aa43326" : "coorcoorcoor",
 			"013f7d4d3c5ea93db64f459e26051c2d" : "08190819drift",
@@ -95,10 +82,7 @@ brokenList = {
 			"2d68a9401d90ea16434ee3cab39ffa38" : "samosilviosilvio",
 			"d559264685b272dc0d0240ec9d9d220a" : "0611STS",
 			"bda2e52c2a803f8b5ad7704d8dc7abc4" : "skarouser",
-			"0c8d699f3bc516e0268566de5dac3036" : "Welcome1admin",
 			"97363275287e16ccdc196292f744a03e" : "ekstaverner",
-			"300593cc08eac19ee37d2a2d6a6b3f9c" : "kvskyadmin",
-			"bc5b3d8f9b9a306b5c93e163ddabd492" : "hkaoyadmin",
 			"24581e47698af2b81e22f456818c4de1" : "Adr01tadroit",
 			"21fc626ad360940116e3f185bdc577fc" : "norrakerberg",
 			"119feb7c6b1b33c532570550b5452151" : "bjornbjornerud",
@@ -148,15 +132,11 @@ brokenList = {
 			"0954e865fdacdbb3b280b5f446001a43" : "TakaiTatu",
 			"6e8b61918348c451a7f19bab5e4faa79" : "laisitteemu",
 			"76033c79ef3eb97085881321eaed2767" : "write1324write",
-			"765677eca2f13389d19057b5e256872f" : "56295701admin",
 			"37db34ce967f206355db34f80cc7c1fd" : "GS460Dan",
-
-			"dbab7e48a4d646716b41b4f3fcb4924a" : "spe@2014admin", # <-- 
 			"73229b885411617b70c56cc5f7286122" : "juhatusAin",
 			"199d966dfabfaeb4b105f27d8b396c94" : "platzerAndreas",
 			"87e9da560bdc956ea6461ea86aea1a1d" : "manushakArno",
 			"fbf940ab0dad2616ca032d2928a80249" : "karacaburhanburhan",
-
 			"b4cfd21a89c739c483cac569c3175ab4" : "Harry20!5harry",
 			"3f436602a26a8f8de95666e007dd36d0" : "karinvasakarin",
 			"2fdda4aa0d5c05fde6df067feb4c9006" : "justinaswindenergy",
@@ -165,22 +145,38 @@ brokenList = {
 			"ed6be39c734b6bb344c8fcbd6873bb18" : "ventventlarm1",
 			"b157e26249662352a4118abb745d5b0c" : "ventventlarm2",
 			"44a035c74987042a625d15e5380db52e" : "ventventlarm3",
-			"bbc3e614d8af57d5fd1547b8d12e1532" : "Linas2admin",
 			"1c680d6690b9d6d4da132286a7718231" : "aaaamichael",
-			"7e4c9f4cded17a09a00ad7bb3ae360a7" : "admin258admin",
-			"80eafdcfe5578e0c8226400999374c4b" : "Balderadmin",
 			"2349c87192a7e7fed03b7f81ae2f9c20" : "pekkajohnny",
 			"3b26e2b26698932e0eb2556274de53ac" : "cobra25Anders",
 			"72b2384bc18688c9109d08ab334504a9" : "minicklas",
 			"8ac33757af624280bcc6d3d687cd499d" : "polisStefan",
+
+			# broken users [admin]:
+			"fa46bb4ff709535939eace8517f563b0" : "admin1066admin",
+			"7e4c9f4cded17a09a00ad7bb3ae360a7" : "admin258admin",
+			"ebd98998ffd59e35a40f08ff3cf31614" : "affe*admin",
+			"13f2e7476de1de9c983e971fa3169215" : "andriusadmin",
+			"bb88d9562e9f4cbb23a50ad43de85820" : "violet70admin",
+			"cd92a26534dba48cd785cdcc0b3e6bd1" : "rootadmin",
+			"d312c1da6817ad4321390ee37cd9e268" : "1qaz3edcadmin",
+			"3532689e6eca49889adc48d00c32d60c" : "kettuadmin",
+			"4d1f2997f1e15e1c4e4a48bc870cadcb" : "Ian716084admin",
+			"cbddd7fd61546efed8179a1fb51157ee" : "hi01admin",
+			"e155a29d32171999e8259235573b1dab" : "sem123admin",
+			"f4b0e1d7019af18327a058449bbc0c54" : "35263526admin",
+			"300593cc08eac19ee37d2a2d6a6b3f9c" : "kvskyadmin",
+			"bc5b3d8f9b9a306b5c93e163ddabd492" : "hkaoyadmin",
+			"0c8d699f3bc516e0268566de5dac3036" : "Welcome1admin",
+			"dbab7e48a4d646716b41b4f3fcb4924a" : "spe@2014admin", # <-- 
+			"765677eca2f13389d19057b5e256872f" : "56295701admin",
+			"bbc3e614d8af57d5fd1547b8d12e1532" : "Linas2admin",
+			"80eafdcfe5578e0c8226400999374c4b" : "Balderadmin",
 
 			# gracias hashcat
 			"d7cf11a4abea92ff326d1c96c61d8f39" : "omerbaneadmin",
 			"1302060f10635cf820a34e637882a2b9" : "contarkadmin"
 
 }
-
-
 
 
 '''  
@@ -197,7 +193,6 @@ b6972d565a4b1cbb139c6a26609bd0c7
 3e5446c1c6f12e1ca728d5360b61c3eb
 321e9eceb85c52e5a529ee8d31819a2b
 e84c252f8cbcc29dd2d5cd4ffcf046b3
-80eafdcfe5578e0c8226400999374c4b
 ac2863a5766c9d3c19f3142c4ba2a1ef
 3ddd025c745c1daed0df8563910e10eb
 5ee0c52df65d8eb8c9d889d699d1a227
